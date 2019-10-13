@@ -1,5 +1,5 @@
 ### post code here
-###background screen for game in progress
+#background screen for game in progress - Rahul
 #STILL need logic
 #STILL need title screen
 import arcade
@@ -29,8 +29,11 @@ def on_draw():
     # MOON
     arcade.draw_circle_filled(WIDTH-100, HEIGHT-75, 30, arcade.color.WHITE_SMOKE)
 
-    draw_pumkin(75, 50)
-    draw_pumkin(300, 50)
+    draw_pumkin(100, 30)
+    draw_pumkin(200, 50)
+
+    draw_pumkin(WIDTH-100, 30)
+    draw_pumkin(WIDTH-200,50)
     #PUMPKIN
 def draw_pumkin(x: int, y: int):
     #BODY
