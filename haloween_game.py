@@ -8,8 +8,17 @@ import arcade
 WIDTH = 640
 HEIGHT = 480
 
+up_pressed = False
+down_pressed = False
+left_pressed = False
+right_pressed = False
 window = arcade.open_window(WIDTH, HEIGHT, "Haloween Candy Drop Game")
 
+candy = arcade.Sprite('candy', center_x=random.randint(1, 640)
+                     , center_y=HEIGHT, scale=0.08)
+candy.change_y = -4
+basket = arcade.Sprite('basket', center_x=random.randint(1, 640)
+                     , center_y=HEIGHT, scale=0.1)
 
 def setup():
     arcade.set_background_color(arcade.color.BLACK)
@@ -18,7 +27,11 @@ def setup():
 
 
 def update(delta_time):
-    pass
+    candy.update()
+        hit = arcade.check_for_collision(basket, candy)
+        if hit == True:
+            score += 1
+            break
 
 
 @window.event
