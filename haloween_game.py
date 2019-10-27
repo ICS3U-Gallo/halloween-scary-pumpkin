@@ -10,19 +10,19 @@ left_pressed = False
 right_pressed = False
 window = arcade.open_window(WIDTH, HEIGHT, "Haloween Candy Drop Game")
 
-candy = arcade.Sprite('candy', center_x=random.randint(1, 640)
+candy = arcade.Sprite('sprites/candy.png', center_x=random.randint(1, 640)
                      , center_y=HEIGHT, scale=0.08)
 candy.change_y = -4
-basket = arcade.Sprite('basket', center_x=random.randint(1, 640)
+basket = arcade.Sprite('sprites/basket.png', center_x=random.randint(1, 640)
                      , center_y=HEIGHT, scale=0.1)
-
+score = 0
 def setup():
     arcade.set_background_color(arcade.color.BLACK)
     arcade.schedule(update, 1/60)
     arcade.run()
 
 
-def update(delta_time):
+def update(delta_time,score):
     candy.update()
     hit = arcade.check_for_collision(basket, candy)
     if hit == True:
@@ -76,3 +76,4 @@ def on_mouse_press(x, y, button, modifiers):
 
 if __name__ == '__main__':
     setup()
+
