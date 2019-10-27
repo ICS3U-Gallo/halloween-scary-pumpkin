@@ -1,9 +1,5 @@
-### post code here
-#background screen for game in progress - Rahul
-#STILL need logic
-#STILL need title screen
 import arcade
-
+import random
 
 WIDTH = 640
 HEIGHT = 480
@@ -28,10 +24,10 @@ def setup():
 
 def update(delta_time):
     candy.update()
-        hit = arcade.check_for_collision(basket, candy)
-        if hit == True:
-            score += 1
-            break
+    hit = arcade.check_for_collision(basket, candy)
+    if hit == True:
+        score += 1
+
 
 
 @window.event
