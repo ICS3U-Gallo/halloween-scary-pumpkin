@@ -15,6 +15,9 @@ candy = arcade.Sprite('sprites/candy.png', center_x=random.randint(1, 640)
 candy.change_y = -4
 basket = arcade.Sprite('sprites/basket.png', center_x=random.randint(1, 640)
                      , center_y=HEIGHT, scale=0.1)
+
+current_screen = "menu"
+
 score = 0
 def setup():
     arcade.set_background_color(arcade.color.BLACK)
