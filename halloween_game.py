@@ -11,7 +11,7 @@ window = arcade.open_window(WIDTH, HEIGHT, "Halloween Candy Drop Game")
 
 background = arcade.Sprite('sprites/background.png', center_x=320, center_y=240, scale=1)
 
-candy = arcade.Sprite('sprites/candy.png', center_x=random.randint(1, 640), center_y=HEIGHT, scale=0.4)
+candy = arcade.Sprite('sprites/candy.png', center_x=random.randint(1, 610), center_y=HEIGHT, scale=0.4)
 candy.change_y = -7
 
 basket = arcade.Sprite('sprites/basket.png', center_x=WIDTH / 2, center_y=128, scale=0.7)
@@ -33,7 +33,7 @@ def update(delta_time, ):
     candy.update()
     if candy.center_y == 130:
         candy.center_y = HEIGHT
-        candy.center_x = random.randint(1, 640)
+        candy.center_x = random.randint(1, 610)
     if left_pressed:
         basket.center_x -= 12
     if right_pressed:
@@ -44,7 +44,7 @@ def update(delta_time, ):
         basket.center_x += 20
     if hit:
         candy.center_y = HEIGHT
-        candy.center_x = random.randint(1, 640)
+        candy.center_x = random.randint(1, 610)
         score += 1
         
 
