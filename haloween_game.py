@@ -32,7 +32,6 @@ def update(delta_time, ):
     candy.update()
     kill = candy.kill()
     hit = arcade.check_for_collision(basket, candy)
-    if hit:
 
     if left_pressed:
         basket.center_x -= 6
