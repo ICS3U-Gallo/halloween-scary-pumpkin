@@ -138,7 +138,15 @@ def draw_instructions():
     start_y = HEIGHT*0.2
     arcade.draw_text("4. HAVE FUN :)",
                      start_x, start_y, arcade.color.WHITE, 40, width=WIDTH, align="center")
-
+def pause_screen():
+    start_x = 0
+    start_y = HEIGHT*0.7
+    arcade.draw_text("PAUSED",
+                     start_x, start_y, arcade.color.WHITE, 40, width=WIDTH, align="center")
+    arcade.draw_circle_filled(WIDTH/2 + 3, HEIGHT/2, 50, arcade.color.WHITE)
+    arcade.draw_rectangle_filled(WIDTH/2 - 10, HEIGHT/2, WIDTH/30, HEIGHT/7, arcade.color.BLACK)
+    arcade.draw_rectangle_filled(WIDTH/ 2 + 20, HEIGHT / 2, WIDTH / 30, HEIGHT / 7, arcade.color.BLACK)
+@
 
 if __name__ == '__main__':
     setup()
