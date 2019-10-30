@@ -17,7 +17,7 @@ def setup():
     background = arcade.Sprite('sprites/background.png', center_x=320, center_y=240, scale=1)
 
     candy = arcade.Sprite('sprites/candy.png', center_x=random.randint(1, 610), center_y=HEIGHT, scale=0.4)
-    candy.change_y = -7
+    candy.change_y = -10
 
     basket = arcade.Sprite('sprites/basket.png', center_x=WIDTH / 2, center_y=128, scale=0.7)
 
@@ -38,9 +38,9 @@ def update(delta_time, ):
         if candy.center_y <= 130:
             current_screen = "gameover"
         if left_pressed:
-            basket.center_x -= 12
+            basket.center_x -= 15
         if right_pressed:
-            basket.center_x += 12
+            basket.center_x += 15
         if basket.center_x > 600:
             basket.center_x -= 20
         if basket.center_x < 50:
@@ -51,7 +51,7 @@ def update(delta_time, ):
             score += 1
     elif current_screen == "menu":
         candy = arcade.Sprite('sprites/candy.png', center_x=random.randint(1, 610), center_y=HEIGHT, scale=0.4)
-        candy.change_y = -7
+        candy.change_y = -10
 
         basket = arcade.Sprite('sprites/basket.png', center_x=WIDTH / 2, center_y=128, scale=0.7)
 
@@ -144,7 +144,7 @@ def draw_menu():
 
 
 def draw_instructions():
-    arcade.set_background_color(arcade.color.PURPLE)
+    arcade.set_background_color(arcade.color.BLACK)
     start_y = HEIGHT - 100
     start_x = 0
     arcade.draw_text("INSTRUCTIONS",
