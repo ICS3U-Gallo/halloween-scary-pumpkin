@@ -12,6 +12,7 @@ window = arcade.open_window(WIDTH, HEIGHT, "Halloween Candy Drop Game")
 
 current_screen = "menu"
 
+
 def setup():
     global background, candy, basket, score, start_x, start_y
     background = arcade.Sprite('sprites/background.png', center_x=320, center_y=240, scale=1)
@@ -61,6 +62,7 @@ def update(delta_time, ):
         left_pressed = False
         right_pressed = False
 
+
 @window.event
 def on_draw():
     global current_screen
@@ -85,6 +87,7 @@ def on_draw():
         draw_pause()
     elif current_screen == "gameover":
         draw_gameover()
+
 
 @window.event
 def on_key_press(key, modifiers):
@@ -112,6 +115,7 @@ def on_key_press(key, modifiers):
         if key == arcade.key.ESCAPE:
             current_screen = "menu"
 
+
 @window.event
 def on_key_release(key, modifiers):
     global left_pressed, right_pressed, current_screen
@@ -125,6 +129,7 @@ def on_key_release(key, modifiers):
 @window.event
 def on_mouse_press(x, y, button, modifiers):
     pass
+
 
 def draw_menu():
     start_y = HEIGHT - 100
@@ -164,6 +169,7 @@ def draw_instructions():
     arcade.draw_text("4. HAVE FUN :)",
                      start_x, start_y, arcade.color.WHITE, 40, width=WIDTH, align="center")
 
+
 def draw_pause():
     start_x = 0
     start_y = HEIGHT*0.7
@@ -175,6 +181,7 @@ def draw_pause():
     arcade.draw_circle_filled(WIDTH/2 + 3, HEIGHT/2, 50, arcade.color.WHITE)
     arcade.draw_rectangle_filled(WIDTH/2 - 10, HEIGHT/2, WIDTH/30, HEIGHT/7, arcade.color.BLACK)
     arcade.draw_rectangle_filled(WIDTH/ 2 + 20, HEIGHT / 2, WIDTH / 30, HEIGHT / 7, arcade.color.BLACK)
+
 
 def draw_gameover():
     arcade.set_background_color(arcade.color.BLACK)
@@ -189,7 +196,6 @@ def draw_gameover():
     start_y = HEIGHT*0.4
     arcade.draw_text("Press the 'ESC' key to go to main menu",
                      start_x, start_y, arcade.color.WHITE, 20, width=WIDTH, align="center")
-
 
 if __name__ == '__main__':
     setup()
